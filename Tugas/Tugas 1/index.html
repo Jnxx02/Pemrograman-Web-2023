@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Jonathan Kwan - Portfolio</title>
+</head>
+
+<body>
+    <header>
+        <h1>Jonathan Kwan</h1>
+        <p>An Ordinary Scholar</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#projects">Propjects</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#languages">Languages</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <div class="about-container">
+            <img src="D:\Kuliah\SEMESTER 3\Pemrograman Web\Tugas\JONATHAN.jpg" alt="Jonathan">
+            <p>
+                Not an Influencer, I'm just an ordinary scholar. 
+                Don't expect more from me xD.
+            </p>
+        </div>
+    </section>
+    
+    
+    <section id="portfolio">
+        <h2>Projects</h2>
+        <div class="projects">
+            <figure>
+                <a href="https://github.com/Jnxx02/SHOPPING-APP" target="_blank">
+                    <img src="project1.jpg" alt="Project 1">
+                    <figcaption>
+                        <h3>Project 1</h3>
+                        <p>Project OOP berbasis GUI "SHOPPING-APP"</p>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+        <div class="project">
+            <figure>
+                <a href="https://github.com/Jnxx02/SecondCharm" target="_blank">
+                    <img src="project2.jpg" alt="Project 2">
+                    <figcaption>
+                        <h3>Project 2</h3>
+                        <p>Project OOP - Aplikasi jual beli baju bekas.</p>
+                    </figcaption>
+                </a>
+            </figure>
+        </div>
+    </section>
+    
+    
+
+    <section id="contact">
+        <h2>Contact Information</h2>
+        <ul>
+            <li>Email: <a href="mailto:jonathankwan056@gmail.com">jonathankwan056@gmail.com</a></li>
+            <li>Phone: <a href="https://wa.me/082188759039">082188759039</a></li>
+            <li>LinkedIn: <a href="https://www.linkedin.com/in/jonathan-kwan-a6880527a/">LinkedIn Profile</a></li>
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <p>Bachelor of Science in Computer Science</p>
+        <p>Hasanuddin University (3rd Semester)</p>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>HTML, CSS</li>
+            <li>Java, JavaScript</li>
+            <li>Python</li>
+        </ul>
+    </section>
+
+    <section id="languages">
+        <h2>Languages</h2>
+        <ul>
+            <li>English (Fluent)</li>
+            <li>Indonesia (Fluent)</li>
+            <li>Japanese (Beginner)</li>
+        </ul>
+    </section>
+    
+    <button id="download-cv">Download Portfolio</button>
+    
+    <footer>
+        <p>&copy; 2023 Jonathan Kwan. All rights reserved.</p>
+        <ul class="social-links">
+            <li><a href="https://www.linkedin.com/in/jonathan-kwan-a6880527a/" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/Jnxx02" target="_blank">GitHub</a></li>
+        </ul>
+    </footer>
+    
+    <script>
+        var projects = document.querySelectorAll('.project');
+        projects.forEach(function(project) {
+            project.addEventListener('mouseover', function() {
+                project.style.transform = 'scale(1.05)';
+                project.style.transition = 'transform 0.3s ease-in-out';
+            });
+            project.addEventListener('mouseout', function() {
+                project.style.transform = 'scale(1)';
+                project.style.transition = 'transform 0.3s ease-in-out';
+            });
+        });
+        
+        function downloadCV() {
+            var cvFile = 'Jonathan_Kwan_Portofolio.pdf';
+            var link = document.createElement('a');
+            link.href = cvFile;
+            link.download = cvFile;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+        document.getElementById('download-cv').addEventListener('click', downloadCV);
+    </script>
+</body>
+</html>
